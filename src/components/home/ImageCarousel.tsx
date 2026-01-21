@@ -5,6 +5,14 @@ export default function ImageCarousel() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = ["/image1.webp", "/image2.webp", "/image4.webp", "/image8.webp", "/image5.webp", "/image.webp"]; // 暂时使用相同图片
 
+  // Preload all images on component mount
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
 
 
   return (
