@@ -3,18 +3,9 @@ import { motion, AnimatePresence } from "motion/react";
 
 export default function ImageCarousel() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = ["/image.png", "/image.png", "/image.png"]; // 暂时使用相同图片
+  const images = ["/image1.webp", "/image2.webp", "/image4.webp", "/image8.webp", "/image5.webp", "/image.webp"]; // 暂时使用相同图片
 
-  // Auto-play functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 10000); // Change image every 10 seconds
 
-    return () => clearInterval(interval);
-  }, [images.length]);
 
   return (
     <div className="hidden lg:w-[55%] xl:w-1/2 items-center justify-center fl-px-4/16 lg:flex">
@@ -46,7 +37,7 @@ export default function ImageCarousel() {
                 key={currentImageIndex}
                 src={images[currentImageIndex]}
                 alt={`Hero image ${currentImageIndex + 1}`}
-                className="h-auto w-full object-contain transition-all duration-300"
+                className="w-full object-contain rounded-lg transition-all duration-300  "
                 style={{ maxHeight: '85vh' }}
                 initial={{ opacity: 0 }}
                 animate={{

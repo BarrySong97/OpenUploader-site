@@ -1,10 +1,16 @@
 ---
-import { DeviconAmazonwebservices, LogosCloudflareIcon, SimpleIconsMinio } from "./icon";
+import {
+  DeviconAmazonwebservices,
+  LogosCloudflareIcon,
+  SimpleIconsMinio,
+} from "./icon";
 ---
 
 <!-- Left Side: Brand, Tagline, Providers, Description and CTA -->
 <div class="flex w-full items-center lg:w-[45%] xl:w-1/2">
-  <div class="w-full fl-px-6/20 fl-py-6/10 flex flex-col justify-between fl-gap-8/16">
+  <div
+    class="w-full fl-px-6/20 fl-py-6/10 flex flex-col justify-between fl-gap-8/16"
+  >
     <!-- Brand Name -->
     <div>
       <h1
@@ -17,29 +23,35 @@ import { DeviconAmazonwebservices, LogosCloudflareIcon, SimpleIconsMinio } from 
       <!-- Tagline -->
       <div class="fl-mt-2/4">
         <p class="fl-text-base/2xl font-light tracking-wide text-white">
-          MULTI-PROVIDER UPLOADS WITH
-          <span class="font-medium text-primary">
-            IMAGE COMPRESSION.
-          </span>
+          MULTI-PROVIDER UPLOADS TOOL WITH
+          <span class="font-medium text-primary"> IMAGE COMPRESSION. </span>
         </p>
       </div>
 
       <!-- Supported Providers -->
       <div class="fl-mt-4/6">
-        <p class="fl-mb-1.5/2.5 fl-text-xs/sm font-medium uppercase tracking-widest text-white/60">
+        <p
+          class="fl-mb-1.5/2.5 fl-text-xs/sm font-medium uppercase tracking-widest text-white/60"
+        >
           Supported Providers
         </p>
         <div class="flex items-center fl-gap-4/6">
           <!-- S3 -->
-          <div class="flex items-center justify-center fl-size-10/14 bg-white rounded-md p-2">
+          <div
+            class="flex items-center justify-center fl-size-10/14 bg-white rounded-md p-2"
+          >
             <DeviconAmazonwebservices className="w-full h-full" />
           </div>
           <!-- MinIO -->
-          <div class="flex items-center justify-center fl-size-10/14 bg-white rounded-md p-2">
+          <div
+            class="flex items-center justify-center fl-size-10/14 bg-white rounded-md p-2"
+          >
             <SimpleIconsMinio className="w-full h-full text-red-500" />
           </div>
           <!-- Cloudflare R2 -->
-          <div class="flex items-center justify-center fl-size-10/14 bg-white rounded-md p-2">
+          <div
+            class="flex items-center justify-center fl-size-10/14 bg-white rounded-md p-2"
+          >
             <LogosCloudflareIcon className="w-full h-full" />
           </div>
         </div>
@@ -65,8 +77,7 @@ import { DeviconAmazonwebservices, LogosCloudflareIcon, SimpleIconsMinio } from 
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M9 5l7 7-7 7"
-          ></path>
+            d="M9 5l7 7-7 7"></path>
         </svg>
       </a>
     </div>
