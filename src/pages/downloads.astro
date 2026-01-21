@@ -1,0 +1,59 @@
+---
+import BlankLayout from "@/layouts/BlankLayout.astro";
+import DownloadCards from "@/components/downloads/DownloadCards.astro";
+---
+
+<BlankLayout
+  title="Download Open Upload - Multi-Provider Upload Tool"
+  description="Download Open Upload for macOS, Windows, and Linux. Free, open-source multi-provider upload tool with image compression support."
+  keywords="download,open upload,upload tool,file upload,macOS,windows,linux,cross-platform"
+  ogImage="/og.webp"
+>
+  <!-- Fixed Gradient Background matching the homepage -->
+  <div
+    class="fixed inset-0 bg-gradient-to-b from-black via-[oklch(0.2_0.08_140)] to-[oklch(0.6_0.15_140)]"
+  >
+  </div>
+
+  <!-- Main Content Section -->
+  <section
+    class="relative min-h-screen flex items-center justify-center fl-px-6/20 fl-py-10/20"
+  >
+    <div class="w-full flex flex-col items-center gap-8">
+      <!-- Page Title -->
+      <div class="text-center">
+        <h1 class="fl-text-4xl/6xl font-bold tracking-wider text-white mb-4">
+          Download Open Upload
+        </h1>
+        <p class="fl-text-base/lg text-white/80 max-w-2xl">
+          Choose your platform to download the latest version of Open Upload
+        </p>
+      </div>
+
+      <!-- Download Cards -->
+      <DownloadCards />
+
+      <!-- Back to Home Button -->
+      <a
+        href="/"
+        class="group inline-flex items-center gap-2 rounded-none border border-white/30 bg-white fl-px-5/8 fl-py-2.5/4 fl-text-xs/sm font-medium uppercase tracking-wider text-black transition-all hover:bg-transparent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        aria-label="Back to Home"
+      >
+        <svg
+          class="h-4 w-4 transition-transform group-hover:-translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </section>
+</BlankLayout>

@@ -1,0 +1,90 @@
+---
+import {
+  TdesignLogoAppleFilled,
+  MdiMicrosoftWindows,
+  UiwLinux,
+} from "@/components/home/icon";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+
+// Platform downloads data array
+const platforms = [
+  {
+    name: "macOS",
+    icon: TdesignLogoAppleFilled,
+    iconColor: "text-gray-800",
+    downloads: [
+      {
+        label: "Apple Silicon",
+        extension: ".dmg",
+        url: "#",
+        comingSoon: true,
+      },
+      { label: "Intel", extension: ".dmg", url: "#", comingSoon: true },
+    ],
+  },
+  {
+    name: "Windows",
+    icon: MdiMicrosoftWindows,
+    iconColor: "text-[#0078D4]",
+    downloads: [
+      {
+        label: "x64",
+        extension: ".exe",
+        url: "https://github.com/BarrySong97/OpenUploader/releases/download/v1.0.4/open-uploader-1.0.4-setup.exe",
+        comingSoon: false,
+      },
+    ],
+  },
+  {
+    name: "Linux",
+    icon: UiwLinux,
+    iconColor: "text-gray-800",
+    downloads: [{ label: "x64", extension: "", url: "", comingSoon: true }],
+  },
+];
+---
+
+<div
+  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl"
+>
+  {
+    platforms.map((platform) => (
+      <Card className="bg-white/95 backdrop-blur-sm shadow-xl">
+        <CardHeader>
+          <div class="flex items-center gap-3">
+            <platform.icon className={`text-4xl ${platform.iconColor}`} />
+            <CardTitle className="text-xl font-semibold">
+              {platform.name}
+            </CardTitle>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div class="space-y-3">
+            {platform.downloads.map((download) =>
+              download.comingSoon ? (
+                <div class="flex items-center justify-between px-4 py-3 rounded-lg border border-gray-200 bg-gray-50">
+                  <span class="font-medium text-gray-500 italic">
+                    {download.label}
+                  </span>
+                  <span class="text-sm text-gray-400 italic">Coming soon</span>
+                </div>
+              ) : (
+                <a
+                  href={download.url}
+                  class="flex items-center justify-between px-4 py-3 rounded-lg border border-gray-200 hover:border-gray-400 hover:bg-gray-50 transition-all group"
+                >
+                  <span class="font-medium text-gray-700">
+                    {download.label}
+                  </span>
+                  <span class="text-sm text-gray-500 group-hover:text-gray-700">
+                    {download.extension}
+                  </span>
+                </a>
+              ),
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    ))
+  }
+</div>
