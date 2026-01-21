@@ -1,7 +1,7 @@
 // @ts-check
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -13,7 +13,7 @@ const site = process.env.VERCEL
   ? process.env.VERCEL_ENV === "production"
     ? "https://en-journey.4real.ltd"
     : `https://${process.env.VERCEL_URL}`
-  : process.env.SITE ?? "http://localhost:4321";
+  : (process.env.SITE ?? "http://localhost:4321");
 const base = process.env.BASE || "/";
 
 // https://astro.build/config

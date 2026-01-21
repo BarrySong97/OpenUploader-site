@@ -15,6 +15,12 @@ const { title, description, keywords, ogImage } = Astro.props;
 <!doctype html>
 <html lang="zh-CN">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <HeadSEO title={title} description={description} ogImage={ogImage} />
     {keywords && <meta name="keywords" content={keywords} />}
   </head>
