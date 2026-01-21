@@ -1,21 +1,22 @@
 ---
 import "@/styles/global.css";
+import HeadSEO from "@/components/HeadSEO.astro";
 
 interface Props {
   title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
 }
 
-const { title } = Astro.props;
-const faviconURL = new URL("favicon.ico", Astro.site).toString();
+const { title, description, keywords, ogImage } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href={faviconURL} type="image/x-icon" sizes="any" />
-    {title && <title>{title}</title>}
+    <HeadSEO title={title} description={description} ogImage={ogImage} />
+    {keywords && <meta name="keywords" content={keywords} />}
   </head>
   <body>
     <slot />
