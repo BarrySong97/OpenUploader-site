@@ -1,0 +1,250 @@
+---
+import HeroText from "./HeroText.astro";
+import ImageCarousel from "./ImageCarousel";
+---
+
+<!-- Gradient Background with Clouds -->
+<div
+  class="fixed inset-0 bg-gradient-to-b from-black via-[oklch(0.2_0.08_140)] to-[oklch(0.6_0.15_140)]"
+>
+  <!-- Clouds Effect -->
+</div>
+
+<!-- Scroll-driven Hero Content -->
+<section class="relative min-h-screen overflow-hidden">
+  <!-- Full Width Left and Right Split -->
+  <div class="flex min-h-screen items-center">
+    <HeroText />
+    <ImageCarousel client:load />
+  </div>
+</section>
+
+<style>
+  /* Clouds Animation */
+  .clouds-container {
+    background: transparent;
+    pointer-events: none;
+  }
+
+  .cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+  }
+
+  /* Create cloud shape using pseudo-elements */
+  .cloud::before,
+  .cloud::after {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+  }
+
+  /* Cloud 1 - Small, top left */
+  .cloud-1 {
+    width: 80px;
+    height: 30px;
+    top: 15%;
+    left: 10%;
+    animation: cloud-drift-1 100s ease-in-out infinite;
+  }
+
+  .cloud-1::before {
+    width: 40px;
+    height: 40px;
+    top: -15px;
+    left: 10px;
+  }
+
+  .cloud-1::after {
+    width: 50px;
+    height: 35px;
+    top: -10px;
+    right: 10px;
+  }
+
+  /* Cloud 2 - Medium, top right */
+  .cloud-2 {
+    width: 120px;
+    height: 40px;
+    top: 25%;
+    right: 15%;
+    animation: cloud-drift-2 120s ease-in-out infinite;
+  }
+
+  .cloud-2::before {
+    width: 50px;
+    height: 50px;
+    top: -20px;
+    left: 15px;
+  }
+
+  .cloud-2::after {
+    width: 60px;
+    height: 45px;
+    top: -15px;
+    right: 15px;
+  }
+
+  /* Cloud 3 - Small, middle left */
+  .cloud-3 {
+    width: 90px;
+    height: 35px;
+    top: 45%;
+    left: 5%;
+    animation: cloud-drift-3 110s ease-in-out infinite;
+  }
+
+  .cloud-3::before {
+    width: 45px;
+    height: 45px;
+    top: -18px;
+    left: 12px;
+  }
+
+  .cloud-3::after {
+    width: 55px;
+    height: 40px;
+    top: -12px;
+    right: 12px;
+  }
+
+  /* Cloud 4 - Large, middle right */
+  .cloud-4 {
+    width: 140px;
+    height: 45px;
+    top: 55%;
+    right: 8%;
+    opacity: 0.8;
+    animation: cloud-drift-4 130s ease-in-out infinite;
+  }
+
+  .cloud-4::before {
+    width: 60px;
+    height: 60px;
+    top: -25px;
+    left: 20px;
+  }
+
+  .cloud-4::after {
+    width: 70px;
+    height: 50px;
+    top: -18px;
+    right: 18px;
+  }
+
+  /* Cloud 5 - Medium, bottom left */
+  .cloud-5 {
+    width: 100px;
+    height: 38px;
+    bottom: 20%;
+    left: 20%;
+    animation: cloud-drift-5 115s ease-in-out infinite;
+  }
+
+  .cloud-5::before {
+    width: 48px;
+    height: 48px;
+    top: -20px;
+    left: 14px;
+  }
+
+  .cloud-5::after {
+    width: 58px;
+    height: 42px;
+    top: -14px;
+    right: 14px;
+  }
+
+  /* Cloud 6 - Small, bottom right */
+  .cloud-6 {
+    width: 85px;
+    height: 32px;
+    bottom: 15%;
+    right: 25%;
+    animation: cloud-drift-6 105s ease-in-out infinite;
+  }
+
+  .cloud-6::before {
+    width: 42px;
+    height: 42px;
+    top: -16px;
+    left: 11px;
+  }
+
+  .cloud-6::after {
+    width: 52px;
+    height: 38px;
+    top: -12px;
+    right: 11px;
+  }
+
+  /* Cloud drift animations */
+  @keyframes cloud-drift-1 {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(20px) translateY(-10px);
+    }
+  }
+
+  @keyframes cloud-drift-2 {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-25px) translateY(8px);
+    }
+  }
+
+  @keyframes cloud-drift-3 {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(18px) translateY(-12px);
+    }
+  }
+
+  @keyframes cloud-drift-4 {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-30px) translateY(10px);
+    }
+  }
+
+  @keyframes cloud-drift-5 {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(22px) translateY(-8px);
+    }
+  }
+
+  @keyframes cloud-drift-6 {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(12px);
+    }
+  }
+
+  /* Honor prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .cloud {
+      animation: none;
+    }
+  }
+</style>

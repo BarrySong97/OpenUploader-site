@@ -1,0 +1,23 @@
+---
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+const faviconURL = new URL("favicon.ico", Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href={faviconURL} type="image/x-icon" sizes="any" />
+    {title && <title>{title}</title>}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

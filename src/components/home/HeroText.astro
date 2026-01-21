@@ -1,0 +1,74 @@
+---
+import { DeviconAmazonwebservices, LogosCloudflareIcon, SimpleIconsMinio } from "./icon";
+---
+
+<!-- Left Side: Brand, Tagline, Providers, Description and CTA -->
+<div class="flex w-full items-center lg:w-[45%] xl:w-1/2">
+  <div class="w-full fl-px-6/20 fl-py-6/10 flex flex-col justify-between fl-gap-8/16">
+    <!-- Brand Name -->
+    <div>
+      <h1
+        class="fl-text-4xl/8xl leading-20 font-bold tracking-wider text-white"
+        style="text-wrap: balance;"
+      >
+        OPEN UPLOAD
+      </h1>
+
+      <!-- Tagline -->
+      <div class="fl-mt-2/4">
+        <p class="fl-text-base/2xl font-light tracking-wide text-white">
+          MULTI-PROVIDER UPLOADS WITH
+          <span class="font-medium text-primary">
+            IMAGE COMPRESSION.
+          </span>
+        </p>
+      </div>
+
+      <!-- Supported Providers -->
+      <div class="fl-mt-4/6">
+        <p class="fl-mb-1.5/2.5 fl-text-xs/sm font-medium uppercase tracking-widest text-white/60">
+          Supported Providers
+        </p>
+        <div class="flex items-center fl-gap-4/6">
+          <!-- S3 -->
+          <div class="flex items-center justify-center fl-size-10/14 bg-white rounded-md p-2">
+            <DeviconAmazonwebservices className="w-full h-full" />
+          </div>
+          <!-- MinIO -->
+          <div class="flex items-center justify-center fl-size-10/14 bg-white rounded-md p-2">
+            <SimpleIconsMinio className="w-full h-full text-red-500" />
+          </div>
+          <!-- Cloudflare R2 -->
+          <div class="flex items-center justify-center fl-size-10/14 bg-white rounded-md p-2">
+            <LogosCloudflareIcon className="w-full h-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="fl-mt-5/7 flex flex-col items-start fl-gap-3/4">
+      <a
+        href="#products"
+        class="group inline-flex items-center gap-2 rounded-none border border-white/30 bg-white fl-px-5/8 fl-py-2.5/4 fl-text-xs/sm font-medium uppercase tracking-wider text-black transition-all hover:bg-transparent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        aria-label="View our products"
+      >
+        Download
+        <svg
+          class="h-4 w-4 transition-transform group-hover:translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
